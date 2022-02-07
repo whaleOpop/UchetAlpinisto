@@ -13,6 +13,8 @@ import javafx.stage.Stage;
 public class MainGid {
 
     @FXML
+    private Button Chronicklle;
+    @FXML
     private ResourceBundle resources;
 
     @FXML
@@ -50,6 +52,24 @@ public class MainGid {
             stage.setScene(new Scene(root));
 
             stage.show();
+        });
+        Chronicklle.setOnAction(event -> {
+            Chronicklle.getScene().getWindow().hide();
+            FXMLLoader loader = new FXMLLoader();
+            loader.setLocation(getClass().getResource("/sample/View/Chronicle.fxml"));
+
+            try {
+                loader.load();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+
+            Parent root = loader.getRoot();
+            Stage stage = new Stage();
+            stage.setScene(new Scene(root));
+
+            stage.show();
+            stage.setResizable(false);
         });
         moun.setOnAction(event -> {
             moun.getScene().getWindow().hide();

@@ -2,14 +2,26 @@
 
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controllers.MainGid">
    <children>
-      <Button fx:id="moun" layoutX="54.0" layoutY="201.0" mnemonicParsing="false" text="Горы" />
-      <Label layoutX="51.0" layoutY="51.0" text="Главная страница" />
-      <Button fx:id="back" layoutX="43.0" layoutY="354.0" mnemonicParsing="false" text="Назад" />
-      <Button fx:id="group" layoutX="112.0" layoutY="201.0" mnemonicParsing="false" text="Группы" />
-      <Button fx:id="mounters" layoutX="181.0" layoutY="201.0" mnemonicParsing="false" text="Скалалазы" />
+      <ImageView fitHeight="400.0" fitWidth="707.0" layoutX="-20.0">
+         <image>
+            <Image url="@image/spory-mezhdu-zhitelyami-i-alpinistami.jpg" />
+         </image>
+      </ImageView>
+      <Button id="record-sales" fx:id="moun" layoutX="39.0" layoutY="270.0" mnemonicParsing="false" stylesheets="@static/buttom.css" text="Горы" />
+      <Label layoutX="209.0" layoutY="14.0" text="Главная страница" textFill="WHITE">
+         <font>
+            <Font name="Rostov" size="46.0" />
+         </font></Label>
+      <Button id="record-sales" fx:id="back" layoutX="14.0" layoutY="348.0" mnemonicParsing="false" stylesheets="@static/buttom.css" text="Назад" />
+      <Button id="record-sales" fx:id="group" layoutX="108.0" layoutY="270.0" mnemonicParsing="false" stylesheets="@static/buttom.css" text="Группы" />
+      <Button id="record-sales" fx:id="mounters" layoutX="189.0" layoutY="270.0" mnemonicParsing="false" stylesheets="@static/buttom.css" text="Скалалазы" />
+      <Button id="record-sales" fx:id="Chronicklle" layoutX="294.0" layoutY="270.0" mnemonicParsing="false" stylesheets="@static/buttom.css" text="Хроника" />
    </children>
 </AnchorPane>

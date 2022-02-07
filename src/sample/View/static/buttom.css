@@ -19,7 +19,7 @@
             #666666,
             #CCCCCC,
             radial-gradient(center 50% 50%, radius 100%, #CCCCCC, #999999);
-    -fx-font-size: 24px;
+
 }
 #record-sales:pressed {
     -fx-padding: 10 15 13 15;

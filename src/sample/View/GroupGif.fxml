@@ -5,13 +5,24 @@
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controllers.Groups">
    <children>
-      <Label layoutX="14.0" layoutY="21.0" text="Группа" />
-      <Button fx:id="back" layoutX="19.0" layoutY="361.0" mnemonicParsing="false" text="Назад" />
+      <ImageView fitHeight="400.0" fitWidth="716.0" layoutX="-97.0" layoutY="-2.0">
+         <image>
+            <Image url="@image/282875.jpeg" />
+         </image>
+      </ImageView>
+      <Label layoutX="19.0" layoutY="6.0" text="Группа" textFill="WHITE">
+         <font>
+            <Font name="Rostov" size="33.0" />
+         </font></Label>
+      <Button id="record-sales" fx:id="back" layoutX="14.0" layoutY="354.0" mnemonicParsing="false" stylesheets="@static/buttom.css" text="Назад" />
       <TableView fx:id="Table" layoutX="14.0" layoutY="45.0" onMouseClicked="#clickItem" prefHeight="294.0" prefWidth="360.0">
         <columns>
           <TableColumn fx:id="name" prefWidth="213.0" text="Название " />
@@ -20,12 +31,18 @@
             <TableColumn fx:id="id" minWidth="0.0" prefWidth="0.0" text="id" />
         </columns>
       </TableView>
-      <Text layoutX="396.0" layoutY="55.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Название" />
-      <Text layoutX="396.0" layoutY="98.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Кол-во участников" />
+      <Text fill="WHITE" layoutX="396.0" layoutY="55.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Название">
+         <font>
+            <Font name="Rostov" size="18.0" />
+         </font></Text>
+      <Text fill="WHITE" layoutX="396.0" layoutY="98.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Кол-во участников">
+         <font>
+            <Font name="Rostov" size="18.0" />
+         </font></Text>
       <TextField fx:id="kolvo" layoutX="396.0" layoutY="102.0" />
       <TextField fx:id="namel" layoutX="396.0" layoutY="58.0" />
-      <Button fx:id="add" layoutX="83.0" layoutY="361.0" mnemonicParsing="false" text="Добавить" />
-      <Button fx:id="edit" layoutX="160.0" layoutY="361.0" mnemonicParsing="false" text="Изменить" />
-      <Button fx:id="delete" layoutX="240.0" layoutY="361.0" mnemonicParsing="false" text="Удалить" />
+      <Button id="record-sales" fx:id="add" layoutX="85.0" layoutY="354.0" mnemonicParsing="false" stylesheets="@static/buttom.css" text="Добавить" />
+      <Button id="record-sales" fx:id="edit" layoutX="175.0" layoutY="354.0" mnemonicParsing="false" stylesheets="@static/buttom.css" text="Изменить" />
+      <Button id="record-sales" fx:id="delete" layoutX="269.0" layoutY="354.0" mnemonicParsing="false" stylesheets="@static/buttom.css" text="Удалить" />
    </children>
 </AnchorPane>

@@ -48,7 +48,22 @@ public class RegGid {
     @FXML
     void initialize() {
 
+        back.setOnAction(event -> {
+            FXMLLoader loader = new FXMLLoader();
+            loader.setLocation(getClass().getResource("/sample/view/LoginGid.fxml"));
+            try {
+                loader.load();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+            back.getScene().getWindow().hide();
+            Parent root = loader.getRoot();
+            Stage stage = new Stage();
+            stage.setResizable(false);
+            stage.setScene(new Scene(root));
 
+            stage.show();
+        });
         reg.setOnAction(event -> {
             if(log.getText().equals("")||pass.getText().equals("")||kolvo.getText().equals("")){
                 Alert alert = new Alert(Alert.AlertType.ERROR);

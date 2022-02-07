@@ -30,7 +30,7 @@ public class Mounter {
     }
 
     public Mounter(String login,  String fio, Date date_birth, String adress, String title, String gender, Integer id_group, String password) {
-        Login = login;
+        this.Login = login;
 
         this.fio = fio;
         this.date_birth = date_birth;
@@ -38,7 +38,7 @@ public class Mounter {
         this.title = title;
         this.gender = gender;
         this.id_group = id_group;
-        Password = password;
+        this.Password = password;
     }
 
 

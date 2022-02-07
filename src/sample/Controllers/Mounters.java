@@ -84,7 +84,7 @@ public class Mounters {
 
     String ids;
     ObservableList<Mounter> observableList = FXCollections.observableArrayList();
-
+    Integer i;
     @FXML
     void clickItem(MouseEvent event) {
 
@@ -93,8 +93,9 @@ public class Mounters {
             loginll.setText(Table.getSelectionModel().getSelectedItem().getLogin().toString());
             passl.setText(Table.getSelectionModel().getSelectedItem().getPassword().toString());
             fiol.setText(Table.getSelectionModel().getSelectedItem().getFio().toString());
-            Integer i = Table.getSelectionModel().getSelectedItem().getId_group();
-            groupl.setText(i.toString());
+            i = Table.getSelectionModel().getSelectedItem().getId_group();
+
+
             datal.setText(Table.getSelectionModel().getSelectedItem().getDate_birth().toString());
             adressl.setText(Table.getSelectionModel().getSelectedItem().getAdress().toString());
             titlel.setText(Table.getSelectionModel().getSelectedItem().getTitle().toString());
@@ -114,7 +115,7 @@ public class Mounters {
         delete.setOnAction(event -> {
             Connection cons;
             PreparedStatement prst;
-            if(ids==null){
+            if(loginll.equals(null)){
                 Alert alert = new Alert(Alert.AlertType.ERROR);
                 alert.setHeaderText("Ошибка");
                 alert.setContentText("Заполните пустые поля");
@@ -150,7 +151,7 @@ public class Mounters {
                 try {
                     Class.forName("com.mysql.cj.jdbc.Driver");
                     cons = DriverManager.getConnection("jdbc:mysql://localhost/ucheb_prackt?serverTimezone=UTC", "root", "77322850nN%");
-                    prst = cons.prepareStatement("UPDATE `prak`.`mountaineer` SET `Login` = '"+loginll.getText()+"', `fio` = '"+fiol.getText()+"', `date_birth` = '"+datal.getText()+"', `adress` = '"+adressl.getText()+"', `title` = '"+titlel.getText()+"', `gender` = '"+poll.getText()+"', `id_group` = '"+groupl.getText()+"', `Password` = '"+passl.getText()+"' WHERE (`Login` = '"+Table.getSelectionModel().getSelectedItem().getLogin()+"')");
+                    prst = cons.prepareStatement("UPDATE `prak`.`mountaineer` SET `Login` = '"+loginll.getText()+"', `fio` = '"+fiol.getText()+"', `date_birth` = '"+datal.getText()+"', `adress` = '"+adressl.getText()+"', `title` = '"+titlel.getText()+"', `gender` = '"+poll.getText()+"', `id_group` = '"+ i.toString()+"', `Password` = '"+passl.getText()+"' WHERE (`Login` = '"+Table.getSelectionModel().getSelectedItem().getLogin()+"')");
 
                             prst.executeUpdate();
                     Table.getItems().clear();
@@ -197,7 +198,7 @@ public class Mounters {
                 cons = DriverManager.getConnection("jdbc:mysql://localhost/prak?serverTimezone=UTC", "root", "77322850nN%");
 
 
-                prstUcheb = cons.prepareStatement("INSERT INTO `prak`.`mountaineer` (`Login`, `fio`, `date_birth`, `adress`, `title`, `gender`, `id_group`, `Password`)  VALUES ('"+loginll.getText()+"','"+fiol.getText()+"', '"+datal.getText()+"', '"+adressl.getText()+"', '"+titlel.getText()+"', '"+poll.getText()+"', "+groupl.getText()+","+passl.getText()+")");
+                prstUcheb = cons.prepareStatement("INSERT INTO `prak`.`mountaineer` (`Login`, `fio`, `date_birth`, `adress`, `title`, `gender`, `id_group`, `Password`)  VALUES ('"+loginll.getText()+"','"+fiol.getText()+"', '"+datal.getText()+"', '"+adressl.getText()+"', '"+titlel.getText()+"', '"+poll.getText()+"', "+ i.toString()+","+passl.getText()+")");
                 prstUcheb.executeUpdate();
 
             } catch (SQLException e) {
